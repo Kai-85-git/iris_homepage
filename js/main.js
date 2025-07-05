@@ -81,43 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(el);
   });
 
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData.entries());
-    
-    const errors = [];
-    
-    if (!data.name || data.name.trim().length < 2) {
-      errors.push('お名前は2文字以上で入力してください。');
-    }
-    
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!data.email || !emailRegex.test(data.email)) {
-      errors.push('有効なメールアドレスを入力してください。');
-    }
-    
-    if (!data.subject || data.subject.trim().length < 2) {
-      errors.push('件名は2文字以上で入力してください。');
-    }
-    
-    if (!data.message || data.message.trim().length < 10) {
-      errors.push('お問い合わせ内容は10文字以上で入力してください。');
-    }
-    
-    if (errors.length > 0) {
-      alert('入力内容に誤りがあります：\\n' + errors.join('\\n'));
-      return;
-    }
-    
-    const mailtoLink = `mailto:contact@iris-ai.jp?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(`お名前: ${data.name}\\nメールアドレス: ${data.email}\\n\\n${data.message}`)}`;
-    window.location.href = mailtoLink;
-    
-    alert('お問い合わせありがとうございます。メールクライアントが開きます。');
-    
-    contactForm.reset();
-  });
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      const submitButton = contactForm.querySelector('.form-submit');
+      submitButton.textContent = '送信中...';
+      submitButton.disabled = true;
+    });
+  }
 
   const heroTitle = document.querySelector('.hero__title');
   if (heroTitle) {
