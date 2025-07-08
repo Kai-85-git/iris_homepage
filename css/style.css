@@ -196,6 +196,19 @@ a:hover {
   object-fit: contain;
 }
 
+.hero__canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#sphereCanvas {
+  display: block;
+  cursor: pointer;
+  max-width: 100%;
+  height: auto;
+}
+
 .profile {
   padding: 5rem 0;
   background-color: var(--color-white);
@@ -498,6 +511,15 @@ a:hover {
   
   .hero__image {
     display: none;
+  }
+  
+  .hero__canvas {
+    margin-top: 2rem;
+  }
+  
+  #sphereCanvas {
+    width: 300px !important;
+    height: 300px !important;
   }
   
   .profile__content {
