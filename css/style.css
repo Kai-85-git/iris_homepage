@@ -496,6 +496,12 @@ a:hover {
   min-height: 150px;
 }
 
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #cccccc;
+  opacity: 1;
+}
+
 .form-submit {
   width: 100%;
   padding: 1rem 2rem;
