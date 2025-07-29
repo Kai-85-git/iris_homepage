@@ -413,5 +413,83 @@
     </div>
   </footer>
   <script src="../js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // main.jsが読み込まれた後に実行するために少し遅延
+      setTimeout(function() {
+        // ナビゲーションリンクの処理を上書き
+        const navLinks = document.querySelectorAll('.header__link');
+        
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          
+          // 既存のイベントリスナーを削除して新しい処理を追加
+          const newLink = link.cloneNode(true);
+          link.parentNode.replaceChild(newLink, link);
+          
+          // index.htmlへのアンカーリンクの場合
+          if (href && href.includes('../index.html#')) {
+            newLink.addEventListener('click', function(e) {
+              // ブラウザのデフォルト動作を許可
+              console.log('Navigating to:', href);
+              // e.preventDefault()を呼ばない = 通常のリンク遷移
+            });
+          }
+          // 同ページ内のアンカーリンクの場合
+          else if (href && href.startsWith('#') && !href.includes('../')) {
+            const targetId = href.substring(1);
+            const target = document.getElementById(targetId);
+            
+            if (target) {
+              newLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                const header = document.querySelector('.header');
+                const headerHeight = header ? header.offsetHeight : 0;
+                const targetPosition = target.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                  top: targetPosition,
+                  behavior: 'smooth'
+                });
+                
+                // モバイルメニューを閉じる
+                const navMenu = document.getElementById('navMenu');
+                const navToggle = document.getElementById('navToggle');
+                if (navMenu && navMenu.classList.contains('active')) {
+                  navMenu.classList.remove('active');
+                  const lines = navToggle.querySelectorAll('.header__toggle-line');
+                  lines.forEach(line => {
+                    line.style.transform = '';
+                    line.style.opacity = '';
+                  });
+                }
+              });
+            }
+          }
+        });
+      }, 100); // main.jsの処理が完了した後に実行
+      
+      // その他のアンカーリンクも処理
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        const href = anchor.getAttribute('href');
+        
+        // ナビゲーションリンク以外で、同ページ内のアンカーリンク
+        if (!anchor.classList.contains('header__link') && href.startsWith('#') && !href.includes('../')) {
+          const targetId = href.substring(1);
+          const target = document.getElementById(targetId);
+          
+          if (target) {
+            anchor.addEventListener('click', function(e) {
+              e.preventDefault();
+              target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            });
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>
