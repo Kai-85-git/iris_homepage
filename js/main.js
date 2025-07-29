@@ -316,4 +316,91 @@ document.addEventListener('DOMContentLoaded', () => {
     
     animate();
   }
+
+  // Professional scroll animations for service detail pages
+  function initializeScrollAnimations() {
+    // Elements with reveal animations
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+    const staggerLists = document.querySelectorAll('.stagger-list');
+    const parallaxElements = document.querySelectorAll('.parallax-element');
+    
+    // Intersection Observer for reveal animations
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          
+          // Remove observer after animation to improve performance
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+    
+    // Observe all reveal elements
+    revealElements.forEach(element => {
+      revealObserver.observe(element);
+    });
+    
+    // Observe stagger lists
+    staggerLists.forEach(list => {
+      revealObserver.observe(list);
+    });
+    
+    // Parallax effect on scroll
+    if (parallaxElements.length > 0) {
+      let ticking = false;
+      
+      function updateParallax() {
+        const scrolled = window.pageYOffset;
+        
+        parallaxElements.forEach(element => {
+          const speed = element.dataset.parallaxSpeed || 0.5;
+          const yPos = -(scrolled * speed);
+          element.style.transform = `translateY(${yPos}px)`;
+        });
+        
+        ticking = false;
+      }
+      
+      function requestTick() {
+        if (!ticking) {
+          window.requestAnimationFrame(updateParallax);
+          ticking = true;
+        }
+      }
+      
+      window.addEventListener('scroll', requestTick);
+    }
+    
+    // Add entrance animations to hero elements
+    const heroElements = document.querySelectorAll('.hero-detail h1, .hero-detail p, .hero-detail img');
+    heroElements.forEach((element, index) => {
+      element.style.opacity = '0';
+      element.style.transform = 'translateY(30px)';
+      setTimeout(() => {
+        element.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+        element.style.opacity = '1';
+        element.style.transform = 'translateY(0)';
+      }, 100 + (index * 150));
+    });
+    
+    // Enhanced hover effects for cards
+    const detailCards = document.querySelectorAll('.service-detail-card');
+    detailCards.forEach(card => {
+      card.addEventListener('mouseenter', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+  }
+  
+  // Initialize animations on page load
+  initializeScrollAnimations();
 });
