@@ -1,0 +1,346 @@
+/* GPTs・Dify開発サービスページ専用スタイル */
+
+/* Hero section animations */
+.hero-detail {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-detail h1 {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.hero-detail p {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+}
+
+.hero-detail img {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInScale 1s ease-out 0.4s forwards;
+}
+
+/* Service cards with hover effects */
+.service-card {
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent, rgba(5, 69, 179, 0.05));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+/* Process flow cards */
+.process-card {
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.process-card.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.process-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.process-number {
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0 auto 1rem;
+  transition: all 0.3s ease;
+}
+
+.process-card:hover .process-number {
+  transform: scale(1.1);
+  background-color: var(--color-primary-dark);
+}
+
+/* FAQ section animations */
+.faq-item {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: all 0.5s ease;
+}
+
+.faq-item.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Case study cards */
+.case-card {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.5s ease;
+  padding: 1rem;
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.case-card.animate-in {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.case-card.fade-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.case-card h4 {
+  transition: color 0.3s ease;
+}
+
+.case-card:hover h4 {
+  color: var(--color-primary);
+}
+
+/* CTA button enhanced */
+.cta-button {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(5, 69, 179, 0.3);
+  background-color: var(--color-primary-dark);
+}
+
+.cta-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Feature list animations */
+.feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-list li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.feature-list li:hover {
+  transform: translateX(5px);
+}
+
+.check-icon {
+  position: absolute;
+  left: 0;
+  color: var(--color-success);
+  transition: transform 0.3s ease;
+}
+
+.feature-list li:hover .check-icon {
+  transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Highlight box animation */
+.highlight-box {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.highlight-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: all 0.5s;
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+/* Parallax effect for hero image */
+.hero-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-image {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.hero-image-container:hover .hero-image {
+  transform: scale(1.05);
+}
+
+/* Loading animation for sections */
+.section-loading {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.section-loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tablet responsiveness */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .process-card {
+    width: 280px;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .process-card,
+  .service-card,
+  .case-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .cta-button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+  
+  /* 開発フローのモバイル対応 */
+  .process-card {
+    width: 90% !important;
+    max-width: 320px !important;
+  }
+  
+  /* 開発フローコンテナのモバイル対応 */
+  div[style*="margin-bottom: 3rem"] > div[style*="display: flex"] {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+  }
+}

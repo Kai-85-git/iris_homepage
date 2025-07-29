@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/gpts-dify-service.css">
   <link rel="icon" href="../img/favicon.png" type="image/png">
 </head>
 <body>
@@ -37,7 +38,9 @@
         <h1 style="font-size: clamp(2.4rem, 1.5vw + 2rem, 4rem); font-weight: 700; color: var(--color-heading); text-align: center; margin-bottom: 2rem;">GPTs・Dify開発サービス</h1>
         <p style="text-align: center; font-size: 1.25rem; color: var(--color-body); margin-bottom: 3rem;">ビジネス効率化と価値創造のため、OpenAIのGPTsとDifyを活用したカスタムAIソリューションを開発</p>
         <div style="text-align: center;">
-          <img src="../img/pc.jpg" alt="GPTs・Dify開発サービス" style="max-width: 600px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+          <div class="hero-image-container" style="display: inline-block;">
+            <img src="../img/pc.jpg" alt="GPTs・Dify開発サービス" class="hero-image" style="max-width: 600px;">
+          </div>
         </div>
       </div>
     </section>
@@ -59,45 +62,45 @@
           <h3 style="font-size: 2rem; font-weight: 700; color: var(--color-heading); margin-bottom: 2rem; text-align: center;">開発内容</h3>
           
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
-            <div style="background-color: var(--color-white); padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+            <div class="service-card">
               <h4 style="font-size: 1.5rem; font-weight: 600; color: var(--color-primary); margin-bottom: 1rem;">🤖 ChatGPTのGPTs開発</h4>
-              <ul style="list-style: none; padding: 0;">
-                <li style="padding: 0.5rem 0; position: relative; padding-left: 1.5rem;">
-                  <span style="position: absolute; left: 0; color: var(--color-success);">✓</span>
+              <ul class="feature-list">
+                <li>
+                  <span class="check-icon">✓</span>
                   業務特化型GPTsの構築
                 </li>
-                <li style="padding: 0.5rem 0; position: relative; padding-left: 1.5rem;">
-                  <span style="position: absolute; left: 0; color: var(--color-success);">✓</span>
+                <li>
+                  <span class="check-icon">✓</span>
                   カスタム知識ベースの統合
                 </li>
-                <li style="padding: 0.5rem 0; position: relative; padding-left: 1.5rem;">
-                  <span style="position: absolute; left: 0; color: var(--color-success);">✓</span>
+                <li>
+                  <span class="check-icon">✓</span>
                   外部APIとの連携機能
                 </li>
-                <li style="padding: 0.5rem 0; position: relative; padding-left: 1.5rem;">
-                  <span style="position: absolute; left: 0; color: var(--color-success);">✓</span>
+                <li>
+                  <span class="check-icon">✓</span>
                   使用方法のトレーニング提供
                 </li>
               </ul>
             </div>
             
-            <div style="background-color: var(--color-white); padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+            <div class="service-card">
               <h4 style="font-size: 1.5rem; font-weight: 600; color: var(--color-primary); margin-bottom: 1rem;">⚡ Difyワークフロー開発</h4>
-              <ul style="list-style: none; padding: 0;">
-                <li style="padding: 0.5rem 0; position: relative; padding-left: 1.5rem;">
-                  <span style="position: absolute; left: 0; color: var(--color-success);">✓</span>
+              <ul class="feature-list">
+                <li>
+                  <span class="check-icon">✓</span>
                   複雑な業務フローの自動化
                 </li>
-                <li style="padding: 0.5rem 0; position: relative; padding-left: 1.5rem;">
-                  <span style="position: absolute; left: 0; color: var(--color-success);">✓</span>
+                <li>
+                  <span class="check-icon">✓</span>
                   マルチモーダル対応（テキスト・画像・音声）
                 </li>
-                <li style="padding: 0.5rem 0; position: relative; padding-left: 1.5rem;">
-                  <span style="position: absolute; left: 0; color: var(--color-success);">✓</span>
+                <li>
+                  <span class="check-icon">✓</span>
                   各種ツール・データベース連携
                 </li>
-                <li style="padding: 0.5rem 0; position: relative; padding-left: 1.5rem;">
-                  <span style="position: absolute; left: 0; color: var(--color-success);">✓</span>
+                <li>
+                  <span class="check-icon">✓</span>
                   カスタムUI/UXデザイン
                 </li>
               </ul>
@@ -108,33 +111,149 @@
           
           <div style="background-color: var(--color-bg-light); padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 3rem;">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-              <div>
+              <div class="case-card">
                 <h4 style="font-size: 1.25rem; font-weight: 600; color: var(--color-heading); margin-bottom: 1rem;">📋 営業支援システム</h4>
                 <p style="color: var(--color-body); line-height: 1.6;">顧客情報を基にした提案書の自動生成、フォローアップメールの作成支援</p>
               </div>
-              <div>
+              <div class="case-card">
                 <h4 style="font-size: 1.25rem; font-weight: 600; color: var(--color-heading); margin-bottom: 1rem;">📚 社内FAQ システム</h4>
                 <p style="color: var(--color-body); line-height: 1.6;">社内文書を学習させた質問応答システム、新人研修サポート</p>
               </div>
-              <div>
+              <div class="case-card">
                 <h4 style="font-size: 1.25rem; font-weight: 600; color: var(--color-heading); margin-bottom: 1rem;">🎨 コンテンツ制作支援</h4>
                 <p style="color: var(--color-body); line-height: 1.6;">ブログ記事、SNS投稿、マーケティング資料の自動生成</p>
               </div>
-              <div>
+              <div class="case-card">
                 <h4 style="font-size: 1.25rem; font-weight: 600; color: var(--color-heading); margin-bottom: 1rem;">💼 業務プロセス最適化</h4>
                 <p style="color: var(--color-body); line-height: 1.6;">データ分析、レポート作成、承認フローの自動化</p>
               </div>
             </div>
           </div>
 
-          <div style="background-color: var(--color-primary); color: var(--color-white); padding: 2rem; border-radius: var(--radius-lg); text-align: center; margin-bottom: 3rem;">
+          <div class="highlight-box">
             <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">開発期間：2〜4週間</h4>
             <p style="margin-bottom: 1rem;">※プロジェクトの複雑さにより変動</p>
             <p>導入後のサポート・メンテナンスも承ります</p>
           </div>
 
+          <h3 style="font-size: 2rem; font-weight: 700; color: var(--color-heading); margin-bottom: 2rem; text-align: center;">開発フロー</h3>
+          
+          <div style="margin-bottom: 3rem;">
+            <!-- 上段: ステップ1-3 -->
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem;">
+              <div class="process-card" style="opacity: 1; visibility: visible;">
+                <div class="process-number">1</div>
+                <h4 style="font-size: 1.25rem; font-weight: 600; color: var(--color-heading); margin-bottom: 1rem;">ヒアリング・要件定義</h4>
+                <p style="color: var(--color-body); line-height: 1.6;">お客様の業務課題やニーズを詳しくヒアリングし、最適なソリューションを提案いたします。</p>
+              </div>
+              
+              <div class="process-card" style="opacity: 1; visibility: visible;">
+                <div class="process-number">2</div>
+                <h4 style="font-size: 1.25rem; font-weight: 600; color: var(--color-heading); margin-bottom: 1rem;">設計・プロトタイプ</h4>
+                <p style="color: var(--color-body); line-height: 1.6;">ワークフロー設計とプロトタイプを作成し、お客様に確認いただきます。</p>
+              </div>
+              
+              <div class="process-card" style="opacity: 1; visibility: visible;">
+                <div class="process-number">3</div>
+                <h4 style="font-size: 1.25rem; font-weight: 600; color: var(--color-heading); margin-bottom: 1rem;">開発・実装</h4>
+                <p style="color: var(--color-body); line-height: 1.6;">承認いただいた設計に基づき、GPTsまたはDifyワークフローを開発いたします。</p>
+              </div>
+            </div>
+            
+            <!-- 下段: ステップ4-6 -->
+            <div style="display: flex; justify-content: center; gap: 2rem;">
+              <div class="process-card" style="opacity: 1; visibility: visible;">
+                <div class="process-number">4</div>
+                <h4 style="font-size: 1.25rem; font-weight: 600; color: var(--color-heading); margin-bottom: 1rem;">テスト・調整</h4>
+                <p style="color: var(--color-body); line-height: 1.6;">実際のデータでテストを行い、必要に応じて調整・改善いたします。</p>
+              </div>
+              
+              <div class="process-card" style="opacity: 1; visibility: visible;">
+                <div class="process-number">5</div>
+                <h4 style="font-size: 1.25rem; font-weight: 600; color: var(--color-heading); margin-bottom: 1rem;">納品・トレーニング</h4>
+                <p style="color: var(--color-body); line-height: 1.6;">システムを納品し、使用方法のトレーニングを実施いたします。</p>
+              </div>
+              
+              <div class="process-card" style="opacity: 1; visibility: visible;">
+                <div class="process-number">6</div>
+                <h4 style="font-size: 1.25rem; font-weight: 600; color: var(--color-heading); margin-bottom: 1rem;">サポート・保守</h4>
+                <p style="color: var(--color-body); line-height: 1.6;">運用開始後も継続的なサポートとメンテナンスを提供いたします。</p>
+              </div>
+            </div>
+          </div>
+
+          <h3 style="font-size: 2rem; font-weight: 700; color: var(--color-heading); margin-bottom: 2rem; text-align: center;">よくある質問</h3>
+          
+          <div style="margin-bottom: 3rem;">
+            <details style="border: 1px solid var(--color-gray-light); border-radius: var(--radius-md); margin-bottom: 1rem; opacity: 1; visibility: visible;" class="faq-item">
+              <summary style="padding: 1.5rem; cursor: pointer; font-weight: 600; color: var(--color-heading); background-color: var(--color-bg-light); border-radius: var(--radius-md);">
+                GPTsとDifyの違いは何ですか？
+              </summary>
+              <div style="padding: 1.5rem; color: var(--color-body); line-height: 1.6;">
+                GPTsはChatGPTの機能拡張で、シンプルな質問応答や知識ベース連携に適しています。Difyはより複雑なワークフローやマルチモーダル対応、外部システム連携が必要な場合に適しています。お客様の要件に応じて最適なプラットフォームをご提案いたします。
+              </div>
+            </details>
+            
+            <details style="border: 1px solid var(--color-gray-light); border-radius: var(--radius-md); margin-bottom: 1rem; opacity: 1; visibility: visible;" class="faq-item">
+              <summary style="padding: 1.5rem; cursor: pointer; font-weight: 600; color: var(--color-heading); background-color: var(--color-bg-light); border-radius: var(--radius-md);">
+                プログラミング知識は必要ですか？
+              </summary>
+              <div style="padding: 1.5rem; color: var(--color-body); line-height: 1.6;">
+                お客様側でのプログラミング知識は不要です。GPTsやDifyはローコード・ノーコードプラットフォームのため、開発後の運用は直感的な操作で行えます。必要に応じて操作方法のトレーニングも提供いたします。
+              </div>
+            </details>
+            
+            <details style="border: 1px solid var(--color-gray-light); border-radius: var(--radius-md); margin-bottom: 1rem; opacity: 1; visibility: visible;" class="faq-item">
+              <summary style="padding: 1.5rem; cursor: pointer; font-weight: 600; color: var(--color-heading); background-color: var(--color-bg-light); border-radius: var(--radius-md);">
+                既存のシステムとの連携は可能ですか？
+              </summary>
+              <div style="padding: 1.5rem; color: var(--color-body); line-height: 1.6;">
+                はい、可能です。API連携やWebhook機能を活用して、既存のCRM、ERP、データベースなどとの連携を実現できます。具体的な連携方法については、ヒアリング時に詳しくお聞かせください。
+              </div>
+            </details>
+            
+            <details style="border: 1px solid var(--color-gray-light); border-radius: var(--radius-md); margin-bottom: 1rem; opacity: 1; visibility: visible;" class="faq-item">
+              <summary style="padding: 1.5rem; cursor: pointer; font-weight: 600; color: var(--color-heading); background-color: var(--color-bg-light); border-radius: var(--radius-md);">
+                セキュリティは大丈夫ですか？
+              </summary>
+              <div style="padding: 1.5rem; color: var(--color-body); line-height: 1.6;">
+                セキュリティ対策は重要視しています。機密情報の取り扱い、アクセス制御、データ暗号化など、適切なセキュリティ対策を実装いたします。また、必要に応じてプライベート環境での構築も可能です。
+              </div>
+            </details>
+            
+            <details style="border: 1px solid var(--color-gray-light); border-radius: var(--radius-md); margin-bottom: 1rem; opacity: 1; visibility: visible;" class="faq-item">
+              <summary style="padding: 1.5rem; cursor: pointer; font-weight: 600; color: var(--color-heading); background-color: var(--color-bg-light); border-radius: var(--radius-md);">
+                開発後のサポート体制はどうなっていますか？
+              </summary>
+              <div style="padding: 1.5rem; color: var(--color-body); line-height: 1.6;">
+                納品後も継続的なサポートを提供いたします。運用中のトラブル対応、機能追加・改善、定期的なメンテナンスなど、お客様の安心運用をサポートいたします。サポートプランはご相談ください。
+              </div>
+            </details>
+            
+            <details style="border: 1px solid var(--color-gray-light); border-radius: var(--radius-md); margin-bottom: 1rem; opacity: 1; visibility: visible;" class="faq-item">
+              <summary style="padding: 1.5rem; cursor: pointer; font-weight: 600; color: var(--color-heading); background-color: var(--color-bg-light); border-radius: var(--radius-md);">
+                料金体系はどのようになっていますか？
+              </summary>
+              <div style="padding: 1.5rem; color: var(--color-body); line-height: 1.6;">
+                プロジェクトの規模や複雑さに応じて、個別にお見積りさせていただきます。初期開発費用の他、運用サポート費用も含めた総合的なコストをご提案いたします。まずはお気軽にご相談ください。
+              </div>
+            </details>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- お問い合わせセクション -->
+    <section style="padding: 5rem 0; background-color: var(--color-bg-light);" class="reveal">
+      <div class="container">
+        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+          <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--color-heading); margin-bottom: 2rem;" class="reveal">お問い合わせ</h2>
+          <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-body); margin-bottom: 3rem;" class="reveal">
+            GPTs・Dify開発について、お気軽にご相談ください。お客様のビジネスに最適なAIソリューションをご提案いたします。
+          </p>
           <div style="text-align: center;">
-            <a href="../index.html#contact" style="display: inline-block; padding: 1rem 3rem; background-color: var(--color-primary); color: var(--color-white); font-weight: 600; font-size: 1.1rem; border-radius: var(--radius-md); box-shadow: var(--shadow-md); transition: all 0.3s ease;">お問い合わせ・お見積りはこちら</a>
+            <a href="../index.html#contact" style="display: inline-block; padding: 1rem 2.5rem; background-color: var(--color-primary); color: var(--color-white); font-weight: 600; font-size: 1.1rem; border-radius: var(--radius-md); box-shadow: var(--shadow-md); transition: all 0.3s ease; text-decoration: none;" class="animate-scaleIn">お問い合わせフォーム</a>
           </div>
         </div>
       </div>
@@ -155,5 +274,6 @@
     </div>
   </footer>
   <script src="../js/main.js"></script>
+  <script src="../js/gpts-dify-service.js"></script>
 </body>
 </html>
