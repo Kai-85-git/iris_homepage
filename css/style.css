@@ -556,6 +556,22 @@ a:hover {
   font-size: 0.875rem;
 }
 
+/* SNSアイコンのホバー効果とスタイル */
+.footer__social a {
+  display: inline-block;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.footer__social a:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
 p, li, span {
   word-wrap: break-word;
   overflow-wrap: break-word;
