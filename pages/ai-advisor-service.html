@@ -10,6 +10,100 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="../img/favicon.png" type="image/png">
+  <style>
+    /* サービスカードのホバー効果 */
+    .service-detail-card {
+      background-color: var(--color-white);
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s ease;
+    }
+    
+    .service-detail-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+    
+    /* パララックス効果 */
+    .parallax-container {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .parallax-element {
+      transition: transform 0.3s ease-out;
+    }
+    
+    /* アニメーション効果 */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.9) translateY(20px);
+      transition: all 0.5s ease;
+    }
+    
+    .reveal-scale.active {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    
+    .stagger-list li {
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: all 0.4s ease;
+    }
+    
+    .stagger-list.active li {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .stagger-list.active li:nth-child(1) { transition-delay: 0.1s; }
+    .stagger-list.active li:nth-child(2) { transition-delay: 0.2s; }
+    .stagger-list.active li:nth-child(3) { transition-delay: 0.3s; }
+    .stagger-list.active li:nth-child(4) { transition-delay: 0.4s; }
+    
+    .animate-scaleIn {
+      transition: all 0.3s ease;
+    }
+    
+    .animate-scaleIn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(5, 69, 179, 0.3);
+    }
+    
+    /* フロー矢印のアニメーション */
+    .flow-arrow-desktop {
+      animation: flow-arrow 2s ease-in-out infinite;
+    }
+    
+    @keyframes flow-arrow {
+      0%, 100% { transform: translateY(-50%) translateX(0); }
+      50% { transform: translateY(-50%) translateX(5px); }
+    }
+    
+    /* モバイル対応 */
+    @media (max-width: 768px) {
+      .service-detail-card {
+        margin-bottom: 1.5rem;
+      }
+      
+      .flow-arrow-desktop {
+        display: none !important;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -36,18 +130,18 @@
       <div class="container">
         <h1 style="font-size: clamp(2.4rem, 1.5vw + 2rem, 4rem); font-weight: 700; color: var(--color-heading); text-align: center; margin-bottom: 2rem;">生成AI顧問サービス</h1>
         <p style="text-align: center; font-size: 1.25rem; color: var(--color-body); margin-bottom: 3rem;">個人事業主・中小企業の皆様へ、AI活用でビジネス課題を解決、最適な生成AIの導入から活用までをトータルサポート</p>
-        <div style="text-align: center;">
-          <img src="../img/training.jpg" alt="生成AI顧問サービス" style="max-width: 600px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+        <div style="text-align: center;" class="parallax-container">
+          <img src="../img/training.jpg" alt="生成AI顧問サービス" class="parallax-element" data-parallax-speed="0.3" style="max-width: 600px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
         </div>
       </div>
     </section>
 
-    <section style="padding: 5rem 0;">
+    <section style="padding: 5rem 0;" class="reveal">
       <div class="container">
         <div style="max-width: 800px; margin: 0 auto;">
-          <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--color-heading); margin-bottom: 2rem; text-align: center;">サービス概要</h2>
+          <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--color-heading); margin-bottom: 2rem; text-align: center;" class="reveal">サービス概要</h2>
           
-          <div style="margin-bottom: 3rem;">
+          <div style="margin-bottom: 3rem;" class="reveal">
             <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-body); margin-bottom: 1.5rem;">
               AI技術の急速な進歩により、生成AIは現代ビジネスにおいて必須のツールとなりました。しかし、「どこから始めればよいかわからない」「自社に最適な活用方法が見つからない」といったお悩みを抱える企業様が多いのも現実です。
             </p>
@@ -56,12 +150,12 @@
             </p>
           </div>
 
-          <h3 style="font-size: 2rem; font-weight: 700; color: var(--color-heading); margin-bottom: 2rem; text-align: center;">サポート内容</h3>
+          <h3 style="font-size: 2rem; font-weight: 700; color: var(--color-heading); margin-bottom: 2rem; text-align: center;" class="reveal">サポート内容</h3>
           
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
-            <div style="background-color: var(--color-white); padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+            <div class="service-detail-card reveal-scale">
               <h4 style="font-size: 1.5rem; font-weight: 600; color: var(--color-primary); margin-bottom: 1rem;">📚 月1回の研修</h4>
-              <ul style="list-style: none; padding: 0;">
+              <ul style="list-style: none; padding: 0;" class="stagger-list">
                 <li style="padding: 0.5rem 0; position: relative; padding-left: 1.5rem;">
                   <span style="position: absolute; left: 0; color: var(--color-success);">✓</span>
                   最新AI技術トレンドの共有
@@ -81,9 +175,9 @@
               </ul>
             </div>
             
-            <div style="background-color: var(--color-white); padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+            <div class="service-detail-card reveal-scale">
               <h4 style="font-size: 1.5rem; font-weight: 600; color: var(--color-primary); margin-bottom: 1rem;">🏢 社内導入と活用提案</h4>
-              <ul style="list-style: none; padding: 0;">
+              <ul style="list-style: none; padding: 0;" class="stagger-list">
                 <li style="padding: 0.5rem 0; position: relative; padding-left: 1.5rem;">
                   <span style="position: absolute; left: 0; color: var(--color-success);">✓</span>
                   現状業務の詳細分析
@@ -103,9 +197,9 @@
               </ul>
             </div>
             
-            <div style="background-color: var(--color-white); padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+            <div class="service-detail-card reveal-scale">
               <h4 style="font-size: 1.5rem; font-weight: 600; color: var(--color-primary); margin-bottom: 1rem;">💬 随時質問対応</h4>
-              <ul style="list-style: none; padding: 0;">
+              <ul style="list-style: none; padding: 0;" class="stagger-list">
                 <li style="padding: 0.5rem 0; position: relative; padding-left: 1.5rem;">
                   <span style="position: absolute; left: 0; color: var(--color-success);">✓</span>
                   チャット・メールでの即時対応
@@ -125,9 +219,9 @@
               </ul>
             </div>
             
-            <div style="background-color: var(--color-white); padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+            <div class="service-detail-card reveal-scale">
               <h4 style="font-size: 1.5rem; font-weight: 600; color: var(--color-primary); margin-bottom: 1rem;">📊 社内データ整備</h4>
-              <ul style="list-style: none; padding: 0;">
+              <ul style="list-style: none; padding: 0;" class="stagger-list">
                 <li style="padding: 0.5rem 0; position: relative; padding-left: 1.5rem;">
                   <span style="position: absolute; left: 0; color: var(--color-success);">✓</span>
                   AI活用に向けたデータ監査
@@ -148,6 +242,107 @@
             </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- サービス利用の流れセクション -->
+    <section style="padding: 5rem 0; background-color: var(--color-bg-light);" class="reveal">
+      <div class="container">
+        <div style="max-width: 1000px; margin: 0 auto;">
+          <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--color-heading); margin-bottom: 3rem; text-align: center;" class="reveal">サービス利用の流れ</h2>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+            <div class="service-detail-card reveal-scale" style="text-align: center;">
+              <div style="width: 60px; height: 60px; background-color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: var(--color-white); font-size: 1.5rem; font-weight: 700;">1</div>
+              <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--color-heading); margin-bottom: 1rem;">初回相談</h3>
+              <p style="color: var(--color-body); line-height: 1.6;">
+                お客様の現状と課題をヒアリングし、最適なAI導入計画を提案いたします。
+              </p>
+            </div>
+            
+            <div class="service-detail-card reveal-scale" style="text-align: center;">
+              <div style="width: 60px; height: 60px; background-color: var(--color-success); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: var(--color-white); font-size: 1.5rem; font-weight: 700;">2</div>
+              <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--color-heading); margin-bottom: 1rem;">契約・開始</h3>
+              <p style="color: var(--color-body); line-height: 1.6;">
+                サービス内容にご納得いただけましたら、契約を結び、定期サポートを開始します。
+              </p>
+            </div>
+            
+            <div class="service-detail-card reveal-scale" style="text-align: center;">
+              <div style="width: 60px; height: 60px; background-color: var(--color-error); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: var(--color-white); font-size: 1.5rem; font-weight: 700;">3</div>
+              <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--color-heading); margin-bottom: 1rem;">継続サポート</h3>
+              <p style="color: var(--color-body); line-height: 1.6;">
+                月1回の研修、随時の質問対応、社内導入支援を通じて、AI活用を推進します。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- よくある質問セクション -->
+    <section style="padding: 5rem 0;" class="reveal">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto;">
+          <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--color-heading); margin-bottom: 3rem; text-align: center;" class="reveal">よくある質問</h2>
+          
+          <div style="margin-bottom: 2rem;" class="reveal">
+            <details style="border: 1px solid var(--color-border); border-radius: var(--radius-md); margin-bottom: 1rem;">
+              <summary style="padding: 1.5rem; cursor: pointer; font-weight: 600; color: var(--color-heading); background-color: var(--color-bg-light); border-radius: var(--radius-md);">
+                顧問サービスと個別サポートの違いは何ですか？
+              </summary>
+              <div style="padding: 1.5rem; color: var(--color-body); line-height: 1.6;">
+                顧問サービスは長期的なパートナーシップを前提とした包括的なサポートです。月1回の定期研修、社内データ整備、継続的な導入支援など、企業のAI活用を総合的にサポートします。一方、個別サポートは特定のツールの使い方を学ぶ短期的なサービスです。
+              </div>
+            </details>
+            
+            <details style="border: 1px solid var(--color-border); border-radius: var(--radius-md); margin-bottom: 1rem;">
+              <summary style="padding: 1.5rem; cursor: pointer; font-weight: 600; color: var(--color-heading); background-color: var(--color-bg-light); border-radius: var(--radius-md);">
+                最低契約期間はどのくらいですか？
+              </summary>
+              <div style="padding: 1.5rem; color: var(--color-body); line-height: 1.6;">
+                最低契約期間は3ヶ月です。AI導入は短期間での成果が難しいため、継続的なサポートを通じて確実な成果を出していただくためです。3ヶ月後は月単位での契約更新が可能です。
+              </div>
+            </details>
+            
+            <details style="border: 1px solid var(--color-border); border-radius: var(--radius-md); margin-bottom: 1rem;">
+              <summary style="padding: 1.5rem; cursor: pointer; font-weight: 600; color: var(--color-heading); background-color: var(--color-bg-light); border-radius: var(--radius-md);">
+                どのような業界・規模の企業に対応していますか？
+              </summary>
+              <div style="padding: 1.5rem; color: var(--color-body); line-height: 1.6;">
+                個人事業主から従業員数50名程度の中小企業まで幅広く対応しています。業界については、製造業、サービス業、IT、コンサルティング、クリエイティブ業界など、様々な分野での実績があります。
+              </div>
+            </details>
+            
+            <details style="border: 1px solid var(--color-border); border-radius: var(--radius-md); margin-bottom: 1rem;">
+              <summary style="padding: 1.5rem; cursor: pointer; font-weight: 600; color: var(--color-heading); background-color: var(--color-bg-light); border-radius: var(--radius-md);">
+                月1回の研修はオンラインでも可能ですか？
+              </summary>
+              <div style="padding: 1.5rem; color: var(--color-body); line-height: 1.6;">
+                はい、オンラインでの研修にも対応しています。Zoom、Teams、Google Meetなどを使用し、画面共有やデモンストレーションを交えた実践的な研修を行います。対面での研修も可能です。
+              </div>
+            </details>
+            
+            <details style="border: 1px solid var(--color-border); border-radius: var(--radius-md); margin-bottom: 1rem;">
+              <summary style="padding: 1.5rem; cursor: pointer; font-weight: 600; color: var(--color-heading); background-color: var(--color-bg-light); border-radius: var(--radius-md);">
+                社内データ整備では具体的に何をしてもらえますか？
+              </summary>
+              <div style="padding: 1.5rem; color: var(--color-body); line-height: 1.6;">
+                現在のデータ管理状況の診断、AI活用に適したデータベース構造の提案、ナレッジベースの構築支援、セキュリティ対策の提案などを行います。お客様の業務に合わせてカスタマイズしたデータ整備プランを作成いたします。
+              </div>
+            </details>
+            
+            <details style="border: 1px solid var(--color-border); border-radius: var(--radius-md); margin-bottom: 1rem;">
+              <summary style="padding: 1.5rem; cursor: pointer; font-weight: 600; color: var(--color-heading); background-color: var(--color-bg-light); border-radius: var(--radius-md);">
+                料金体系について教えてください
+              </summary>
+              <div style="padding: 1.5rem; color: var(--color-body); line-height: 1.6;">
+                料金は企業規模やサポート内容によって異なります。初回相談は無料ですので、まずはお客様の状況をお聞かせください。その上で、最適なプランと料金をご提案いたします。
+              </div>
+            </details>
+          </div>
+
           <div style="background-color: var(--color-bg-light); padding: 2rem; border-radius: var(--radius-lg); text-align: center; margin-bottom: 3rem;">
             <h4 style="font-size: 1.5rem; font-weight: 700; color: var(--color-heading); margin-bottom: 1rem;">初回相談無料</h4>
             <p style="color: var(--color-body); margin-bottom: 1rem;">まずはお客様の現状と課題をお聞かせください</p>
@@ -155,7 +350,7 @@
           </div>
 
           <div style="text-align: center;">
-            <a href="../index.html#contact" style="display: inline-block; padding: 1rem 3rem; background-color: var(--color-primary); color: var(--color-white); font-weight: 600; font-size: 1.1rem; border-radius: var(--radius-md); box-shadow: var(--shadow-md); transition: all 0.3s ease;">無料相談を申し込む</a>
+            <a href="../index.html#contact" style="display: inline-block; padding: 1rem 3rem; background-color: var(--color-primary); color: var(--color-white); font-weight: 600; font-size: 1.1rem; border-radius: var(--radius-md); box-shadow: var(--shadow-md); transition: all 0.3s ease;" class="animate-scaleIn">無料相談を申し込む</a>
           </div>
         </div>
       </div>
@@ -176,5 +371,56 @@
     </div>
   </footer>
   <script src="../js/main.js"></script>
+  <script>
+    // スクロールアニメーション
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    // アニメーション要素を監視
+    document.querySelectorAll('.reveal, .reveal-scale').forEach(el => {
+      observer.observe(el);
+    });
+
+    // ステージャーリストアニメーション
+    document.querySelectorAll('.stagger-list').forEach(list => {
+      observer.observe(list);
+    });
+
+    // パララックス効果
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const parallaxElements = document.querySelectorAll('.parallax-element');
+      
+      parallaxElements.forEach(element => {
+        const speed = element.dataset.parallaxSpeed || 0.5;
+        const yPos = -(scrolled * speed);
+        element.style.transform = `translateY(${yPos}px)`;
+      });
+    });
+
+    // スムーススクロール強化
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
