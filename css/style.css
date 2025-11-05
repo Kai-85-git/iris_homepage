@@ -73,12 +73,19 @@ a:hover {
 }
 
 .section-title {
-  font-size: clamp(2rem, 1.5vw + 1.5rem, 3rem);
+  font-size: 28px;
   font-weight: 700;
-  color: var(--color-heading);
-  text-align: center;
-  margin-bottom: 3rem;
+  color: #333333;
+  text-align: left;
+  border-left: 4px solid #0545B3;
+  padding-left: 0.7em;
+  margin-bottom: 1.5em;
   line-height: 1.3;
+}
+
+.services__description {
+  margin-bottom: 2em;
+  font-size: 21px;
 }
 
 .header {
@@ -147,10 +154,22 @@ a:hover {
 }
 
 .hero .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.hero__content {
+  flex: 1;
+  min-width: 320px;
+}
+
+.animated-text-container {
+  height: 280px;
+  position: relative;
+  margin-bottom: 1rem;
 }
 
 .hero__title {
@@ -162,9 +181,9 @@ a:hover {
 }
 
 .hero__subtitle {
-  font-size: 1.125rem;
-  color: var(--color-body);
-  margin-bottom: 2rem;
+  font-size: 1.25rem;
+  color: #888;
+  margin-bottom: 2.5rem;
   line-height: 1.8;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -172,11 +191,11 @@ a:hover {
 
 .hero__cta {
   display: inline-block;
-  padding: 1rem 2.5rem;
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  font-weight: 500;
-  border-radius: var(--radius-md);
+  padding: 0.7em 2em;
+  background-color: #0545B3;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 6px;
   box-shadow: var(--shadow-md);
   transition: all 0.3s ease;
 }
@@ -204,6 +223,8 @@ a:hover {
 }
 
 .hero__canvas {
+  flex: 1;
+  min-width: 320px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -212,8 +233,9 @@ a:hover {
 #sphereCanvas {
   display: block;
   cursor: pointer;
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
 }
 
 .profile {
@@ -222,7 +244,7 @@ a:hover {
 }
 
 .profile__info {
-  max-width: 45%;
+  max-width: 70%;
   margin: 0;
 }
 
@@ -254,10 +276,27 @@ a:hover {
 }
 
 .profile__name {
-  font-size: 2rem;
+  font-size: 21px;
   font-weight: 700;
   color: var(--color-heading);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5em;
+}
+
+.profile__social {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5em;
+}
+
+.profile__description {
+  color: #888;
+  margin-bottom: 1em;
+  font-size: 21px;
+}
+
+.profile__info p {
+  margin-bottom: 1em;
+  font-size: 21px;
 }
 
 .profile__title {
@@ -366,9 +405,9 @@ a:hover {
 }
 
 .service-card__title {
-  font-size: 1.25rem;
+  font-size: 21px;
   font-weight: 700;
-  color: var(--color-heading);
+  color: #333333;
   margin-bottom: 1rem;
 }
 
@@ -376,7 +415,7 @@ a:hover {
   color: var(--color-body);
   line-height: 1.7;
   margin-bottom: 1.5rem;
-  font-size: 1rem;
+  font-size: 16px;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
@@ -392,7 +431,7 @@ a:hover {
   position: relative;
   margin-bottom: 0.5rem;
   color: var(--color-body);
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.6;
 }
 
@@ -438,9 +477,10 @@ a:hover {
 }
 
 .contact__description {
-  text-align: center;
+  text-align: left;
   color: var(--color-body);
-  margin-bottom: 3rem;
+  margin-bottom: 2em;
+  font-size: 21px;
   line-height: 1.8;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -462,7 +502,7 @@ a:hover {
   font-weight: 500;
   color: var(--color-heading);
   margin-bottom: 0.5rem;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.8;
 }
 
@@ -505,9 +545,9 @@ a:hover {
 .form-submit {
   width: 100%;
   padding: 1rem 2rem;
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  font-weight: 500;
+  background-color: #0545B3;
+  color: #fff;
+  font-weight: 700;
   font-size: 1rem;
   border: none;
   border-radius: var(--radius-md);
@@ -557,6 +597,13 @@ a:hover {
 }
 
 /* SNSアイコンのホバー効果とスタイル */
+.footer__social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
 .footer__social a {
   display: inline-block;
   padding: 8px;
@@ -570,6 +617,16 @@ a:hover {
   transform: scale(1.1);
   background-color: rgba(255, 255, 255, 1);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.footer__social img {
+  width: 32px;
+  height: 32px;
+}
+
+.profile__social img {
+  width: 24px;
+  height: 24px;
 }
 
 p, li, span {
@@ -990,6 +1047,10 @@ p, li, span {
   display: none;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 @media (max-width: 1024px) {
   .profile__info {
     max-width: 80%;
@@ -1000,9 +1061,230 @@ p, li, span {
   .mobile-only {
     display: inline;
   }
-  
+
   .profile__info {
     max-width: 100%;
     padding: 0 1rem;
+  }
+}
+
+/* ストロークテキストアニメーション用CSS */
+.animated-text-container svg {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.stroke-text {
+  text-anchor: start;
+  dominant-baseline: hanging;
+  stroke-dasharray: 1400;
+  stroke: #0B0B0B;
+  fill: transparent;
+  stroke-width: 3.5px;
+}
+
+.stroke-text.line1 {
+  animation: strokeDraw 3s ease-out forwards;
+}
+
+.stroke-text.line2 {
+  animation: strokeDraw 3s ease-out 0.5s forwards;
+}
+
+.stroke-text.line3 {
+  animation: strokeDraw 3s ease-out 1s forwards;
+}
+
+@keyframes strokeDraw {
+  0% {
+    stroke-dashoffset: 1400;
+    stroke-width: 3.5px;
+    fill: transparent;
+  }
+  40% {
+    fill: transparent;
+  }
+  60% {
+    stroke-width: 3.5px;
+  }
+  90% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-width: 0px;
+    fill: #0B0B0B;
+  }
+}
+
+/* ホバー時の再アニメーション */
+.animated-text-container:hover .stroke-text {
+  animation: none;
+}
+
+.animated-text-container:hover .stroke-text.line1 {
+  animation: strokeDraw 2s ease-out forwards;
+}
+
+.animated-text-container:hover .stroke-text.line2 {
+  animation: strokeDraw 2s ease-out 0.3s forwards;
+}
+
+.animated-text-container:hover .stroke-text.line3 {
+  animation: strokeDraw 2s ease-out 0.6s forwards;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1024px) {
+  .animated-text-container {
+    height: 240px !important;
+  }
+
+  .animated-text-container svg {
+    viewBox: 0 0 550 240;
+  }
+
+  .animated-text-container svg text {
+    font-size: 60px;
+  }
+
+  .animated-text-container svg .line1 {
+    y: 40;
+  }
+
+  .animated-text-container svg .line2 {
+    y: 115;
+  }
+
+  .animated-text-container svg .line3 {
+    y: 190;
+  }
+
+  .stroke-text {
+    stroke-dasharray: 1200;
+    stroke-width: 3px;
+  }
+
+  @keyframes strokeDraw {
+    0% {
+      stroke-dashoffset: 1200;
+      stroke-width: 3px;
+      fill: transparent;
+    }
+    40% {
+      fill: transparent;
+    }
+    60% {
+      stroke-width: 3px;
+    }
+    90% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-width: 0px;
+      fill: #0B0B0B;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .animated-text-container {
+    height: 220px !important;
+  }
+
+  .animated-text-container svg {
+    viewBox: 0 0 450 220;
+  }
+
+  .animated-text-container svg text {
+    font-size: 48px;
+  }
+
+  .animated-text-container svg .line1 {
+    y: 40;
+  }
+
+  .animated-text-container svg .line2 {
+    y: 110;
+  }
+
+  .animated-text-container svg .line3 {
+    y: 180;
+  }
+
+  .stroke-text {
+    stroke-dasharray: 1000;
+    stroke-width: 2.5px;
+  }
+
+  @keyframes strokeDraw {
+    0% {
+      stroke-dashoffset: 1000;
+      stroke-width: 2.5px;
+      fill: transparent;
+    }
+    40% {
+      fill: transparent;
+    }
+    60% {
+      stroke-width: 2.5px;
+    }
+    90% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-width: 0px;
+      fill: #0B0B0B;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .animated-text-container {
+    height: 180px !important;
+  }
+
+  .animated-text-container svg {
+    viewBox: 0 0 350 180;
+  }
+
+  .animated-text-container svg text {
+    font-size: 36px;
+  }
+
+  .animated-text-container svg .line1 {
+    y: 35;
+  }
+
+  .animated-text-container svg .line2 {
+    y: 90;
+  }
+
+  .animated-text-container svg .line3 {
+    y: 145;
+  }
+
+  .stroke-text {
+    stroke-dasharray: 700;
+    stroke-width: 2px;
+  }
+
+  @keyframes strokeDraw {
+    0% {
+      stroke-dashoffset: 700;
+      stroke-width: 2px;
+      fill: transparent;
+    }
+    40% {
+      fill: transparent;
+    }
+    60% {
+      stroke-width: 2px;
+    }
+    90% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-width: 0px;
+      fill: #0B0B0B;
+    }
   }
 }
