@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-body leading-relaxed antialiased;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-container mx-auto px-4 md:px-8;
+  }
+
+  .section-title {
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold text-heading text-center mb-12 leading-tight;
+  }
+
+  .btn-primary {
+    @apply inline-block px-6 py-3 bg-primary text-white font-medium rounded-lg shadow-md transition-all duration-300 hover:bg-primary-dark hover:-translate-y-0.5 hover:shadow-lg;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 border border-gray-light rounded-md font-sans text-base text-body bg-white transition-colors duration-300 focus:outline-none focus:border-primary;
+  }
+
+  .service-card {
+    @apply bg-white rounded-lg shadow-md transition-all duration-300 overflow-hidden flex flex-col h-full hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .service-detail-card {
+    @apply bg-white p-8 rounded-lg shadow-md transition-all duration-300 relative overflow-hidden hover:-translate-y-1 hover:shadow-lg;
+  }
+}
+
+@layer utilities {
+  .reveal {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+  }
+
+  .reveal.active {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .stroke-text {
+    stroke-dasharray: 1400;
+    stroke: #0B0B0B;
+    fill: transparent;
+    stroke-width: 3.5px;
+  }
+
+  .stroke-text.line1 {
+    animation: strokeDraw 3s ease-out forwards;
+  }
+
+  .stroke-text.line2 {
+    animation: strokeDraw 3s ease-out 0.5s forwards;
+  }
+
+  .stroke-text.line3 {
+    animation: strokeDraw 3s ease-out 1s forwards;
+  }
+
+  @keyframes strokeDraw {
+    0% {
+      stroke-dashoffset: 1400;
+      stroke-width: 3.5px;
+      fill: transparent;
+    }
+    40% {
+      fill: transparent;
+    }
+    60% {
+      stroke-width: 3.5px;
+    }
+    90% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-width: 0px;
+      fill: #0B0B0B;
+    }
+  }
+}
+
+/* Mobile menu styles */
+@media (max-width: 450px) {
+  .mobile-menu {
+    @apply fixed top-[60px] left-0 right-0 bg-white flex-col p-6 shadow-md transform -translate-x-full transition-transform duration-300;
+  }
+
+  .mobile-menu.active {
+    @apply translate-x-0;
+  }
+}
